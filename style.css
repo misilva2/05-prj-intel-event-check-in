@@ -25,7 +25,8 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       135deg,
       rgba(0, 153, 219, 0.9) 0%,
       rgba(0, 104, 181, 0.9) 50%,
@@ -348,24 +349,124 @@ select {
   color: #475569;
 }
 
-/* Mobile responsive */
-@media (max-width: 768px) {
+.celebration-message {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  background-color: #e8f4fc;
+  color: #003c71;
+  display: none;
+}
+
+.team-card.celebrating {
+  border: 2px solid #0071c5;
+  box-shadow: 0 6px 18px rgba(0, 113, 197, 0.2);
+}
+
+.attendee-list-section {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 2px solid #f1f5f9;
+  text-align: left;
+}
+
+.attendee-list-section h3 {
+  color: #64748b;
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.attendee-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.attendee-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.attendee-name {
+  font-weight: 600;
+  color: #334155;
+}
+
+.attendee-team {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+.attendee-item.water {
+  background-color: #e8f7fc;
+}
+
+.attendee-item.zero {
+  background-color: #ecfdf3;
+}
+
+.attendee-item.power {
+  background-color: #fff7ed;
+}
+
+.attendee-team.water {
+  background-color: #d7eff9;
+  color: #0369a1;
+}
+
+.attendee-team.zero {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.attendee-team.power {
+  background-color: #ffedd5;
+  color: #9a3412;
+}
+
+/* Mobile (up to 767px) */
+@media (max-width: 767px) {
   .hero {
     padding: 35px 20px;
   }
+
   .hero h1 {
-    font-size: 38px;
-  }
-  .container {
-    padding: 32px;
-    margin: 0 15px 30px;
+    font-size: 30px;
   }
 
-  .form-group {
+  .hero p {
+    font-size: 18px;
+  }
+
+  .attendance-tracker,
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  .container {
+    padding: 20px;
+    margin: 0 auto 20px;
+  }
+
+  .check-in {
+    padding: 20px;
+  }
+
+  .form-group,
+  .input-wrapper {
     flex-direction: column;
   }
 
   input,
+  select,
   button {
     width: 100%;
   }
@@ -374,11 +475,81 @@ select {
     height: 50px;
   }
 
-  .input-wrapper {
+  .teams-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .attendee-item {
     flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Medium screens (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero {
+    padding: 45px 24px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero p {
+    font-size: 20px;
+  }
+
+  .attendance-tracker,
+  .container {
+    max-width: 860px;
+    width: 92%;
+  }
+
+  .container {
+    padding: 24px;
+  }
+
+  .check-in {
+    padding: 24px;
   }
 
   .teams-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-card:last-child {
+    grid-column: span 2;
+  }
+}
+
+/* Desktop (1025px and up) */
+@media (min-width: 1025px) {
+  .hero {
+    padding: 70px 40px;
+  }
+
+  .hero-content {
+    max-width: 960px;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+  }
+
+  .hero p {
+    font-size: 24px;
+  }
+
+  .attendance-tracker,
+  .container {
+    max-width: 900px;
+  }
+
+  .check-in {
+    padding: 32px;
+  }
+
+  .teams-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
